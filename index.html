@@ -8,17 +8,23 @@
 
         <title>Lien/Sprat 9ICU Insulin Calc</title>
         <style type="text/css">
+
             body{
                 text-align: center;
                 margin-top: 72px;
                 background: teal;
+                
                 /*font-family: "Arial Black";*/
                 font-family: 'Raleway', sans-serif;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center center;
             }
             p{
                 font-size: 50px;
                 color: white;
                 filter: drop-shadow(7px 1px 1px black);
+
             }
           #Submit{
                height: 60px;
@@ -30,6 +36,11 @@
                border: solid 5px white;
                color: white;
                  }
+           #Submit:hover {
+           	color: Teal;
+           	background-color: white;
+           	transition: color 1s;
+           	           }
             #pastSugar, #nowSugar, #nowInsulin{
                 height: 50px;
                 font-size: 26px;
@@ -40,7 +51,26 @@
                 border: solid 2px white;
                 padding: 3px;
                 margin-bottom: 20px;
+                transition: color 1s, background-color 1s;
 
+
+            }
+            #pastSugar:hover {
+            	background-color: white;
+            	color: black;
+            	transition: background-color 1s, color 1s;
+
+            }
+            #nowSugar:hover {
+            	background-color: white;
+            	color: black;
+            	transition: background-color 1s, color 1s;
+
+            }
+            #nowInsulin:hover {
+            	background-color: white;
+            	color: black;
+            	transition: background-color 1s, color 1s;
 
             }
             #input{
@@ -52,11 +82,20 @@
             }
             h1{
                 color: white;
-            }
+                transition: color 1s;
+		     }
+		     h1:hover {
+		     	color: orange;
+		     	transition: color 1s;
+		     }
             #label{
                 color: white;
             }
-            }
+            ::placeholder {
+            	color: white;
+            	text-align: center;
+            	filter: opacity(50%);
+            } ;
         </style>
     </head>
     <body>
