@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <link rel="stylesheet" type="text/css" href="LS.css">
+        <title>Blank App</title>
+        <style type="text/css">
+            body{
+                text-align: center;
+                margin-top: 72px;
+                background: teal;
+                font-family: "Arial Black";
+            }
+            p{
+                font-size: 50px;
+                color: white;
+                filter: drop-shadow(7px 1px 1px black);
+            }
+          #Submit{
+               height: 60px;
+               width: 120px;
+               background-color: orange;
+               margin-top: 50px;
+               font-size: 26px;
+               font-weight: bold;
+               border: solid 2px white;
+               color: white;
+                 }
+            #pastSugar, #nowSugar, #nowInsulin{
+                height: 50px;
+                font-size: 26px;
+                width: 190px;
+                background: orange;
+                color: white;
+                font-weight: bold;
+                border: solid 2px white;
+                padding: 3px;
+
+
+            }
+            #input{
+                /*text-align: right;*/
+                margin-right: auto;
+                margin-left: auto;
+                width: 200px;
+            }
+            h1{
+                color: white;
+            }
+            #label{
+                color: white;
+            }
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Sean's Insulin Gtt Rate Calculator</h1>
+
+        <form>
+            <div id="input">
+                <dl>
+        			<dt><label id="label">Past BG: </label><input type="text" id="pastSugar" placeholder="Past BG"></dt>
+        			<dt><label id="label">Current BG: </label><input type="text" id="nowSugar" placeholder="Current BG"></dt>
+        			<dt><label id="label">Current Rate: </label><input type="text" id="nowInsulin" placeholder="Current Rate"></dt>
+            </div>
+			     </dl>
+	   </form>
+
+	<button id="Submit">Submit</button>
+	<p>Result</p>
+<script>
+    var button = document.querySelector("button");
+var paragraph = document.querySelector("p");
+ 
+button.addEventListener("click", function now(){
+    let nowSugar = document.getElementById("nowSugar").value;
+    let pastSugar = document.getElementById("pastSugar").value;
+    let insulinRate = document.getElementById("nowInsulin").value;
+    if(nowSugar >= 85 && nowSugar <= 100){
+        if(pastSugar < 120){
+            console.log (nowInsulin =(insulinRate * 0.6));
+            paragraph.textContent = nowInsulin + " units/hr";
+        }
+        else if(pastSugar >= 120 && pastSugar <= 150){
+            console.log (nowInsulin =(insulinRate * 0.5));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 151 && pastSugar <= 200){
+            console.log(nowInsulin =(insulinRate * 0.3));
+            paragraph.textContent = nowInsulin + " units/hr";
+        }
+        else if(pastSugar > 200){
+            console.log(nowInsulin = (insulinRate * 0.1));
+            paragraph.textContent = nowInsulin + " units/hr";
+        }
+
+    }
+    if(nowSugar >= 101 && nowSugar <= 120){
+        if(pastSugar <= 100){
+            console.log(nowInsulin = (insulinRate * 1));
+            paragraph.textContent = nowInsulin + " units/hr";
+        }
+        else if(pastSugar >= 101 && pastSugar <= 120){
+            console.log(nowInsulin = (insulinRate * 0.9));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 121 && pastSugar <= 140){
+            console.log(nowInsulin = (insulinRate * 0.7));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 141 && pastSugar <= 180){
+            console.log(nowInsulin = (insulinRate * 0.6));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 181 && pastSugar <= 225){
+            console.log(nowInsulin = (insulinRate * 0.5));
+            paragraph.textContent = nowInsulin + " units/hr";
+        }
+        else if(pastSugar >= 226 && pastSugar <= 250){
+            console.log(nowInsulin = (insulinRate * 0.4));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 251 && pastSugar <= 275){
+            console.log(nowInsulin = (insulinRate * 0.3));
+            paragraph.textContent = nowInsulin + " units/hr";
+        }
+        else if(pastSugar >= 276 && pastSugar <= 450){
+            console.log(nowInsulin = (insulinRate * 0.1));
+            paragraph.textContent = nowInsulin + " units/hr";
+        }
+
+    }
+    if(nowSugar >= 141 && nowSugar <= 160){
+        if(pastSugar <= 100){
+            console.log(nowInsulin = (insulinRate * 1.2));
+            paragraph.textContent = nowInsulin + " units/hr";
+        }
+        else if(pastSugar >= 101 && pastSugar <= 140){
+            console.log(nowInsulin = (insulinRate * 1.1));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 141 && pastSugar <= 160){
+            console.log(nowInsulin = (insulinRate * 1));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 161 && pastSugar <= 180){
+            console.log(nowInsulin = (insulinRate * 0.9));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 181 && pastSugar <= 200){
+            console.log(nowInsulin = (insulinRate * 0.7));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 201 && pastSugar <= 225){
+            console.log(nowInsulin = (insulinRate * 0.6));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 226 && pastSugar <= 275){
+            console.log(nowInsulin = (insulinRate * 0.5));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 276 && pastSugar <= 300){
+            console.log(nowInsulin = (insulinRate * 0.4));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 301 && pastSugar <= 325){
+            console.log(nowInsulin = (insulinRate * 0.2));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 326 && pastSugar <= 450){
+            console.log(nowInsulin = (insulinRate * 0.1));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+
+    }
+    if(nowSugar >= 161 && nowSugar <= 175){
+        if(pastSugar <= 100){
+            console.log(nowInsulin = (insulinRate * 1.4));
+            paragraph.textContent = nowInsulin + " units/hr";
+        }
+        else if(pastSugar >= 101 && pastSugar <= 140){
+            console.log(nowInsulin = (insulinRate * 1.2));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 141 && pastSugar <= 175){
+            console.log(nowInsulin = (insulinRate * 1.1));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 176 && pastSugar <= 200){
+            console.log(nowInsulin = (insulinRate * 1));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 201 && pastSugar <= 225){
+            console.log(nowInsulin = (insulinRate * 0.9));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 226 && pastSugar <= 250){
+            console.log(nowInsulin = (insulinRate * 0.7));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 251 && pastSugar <= 275){
+            console.log(nowInsulin = (insulinRate * 0.5));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 276 && pastSugar <= 300){
+            console.log(nowInsulin = (insulinRate * 0.4));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 301 && pastSugar <= 350){
+            console.log(nowInsulin = (insulinRate * 0.2));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 351 && pastSugar <= 450){
+            console.log(nowInsulin = (insulinRate * 0.1));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+
+    }
+    if(nowSugar >= 176 && nowSugar <= 200){
+        if(pastSugar <= 100){
+            console.log(nowInsulin = (insulinRate * 1.5));
+            paragraph.textContent = nowInsulin + " units/hr";
+        }
+        else if(pastSugar >= 101 && pastSugar <= 200){
+            console.log(nowInsulin = (insulinRate * 1.2));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 201 && pastSugar <= 250){
+            console.log(nowInsulin = (insulinRate * 1));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 251 && pastSugar <= 275){
+            console.log(nowInsulin = (insulinRate * 0.7));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 276 && pastSugar <= 300){
+            console.log(nowInsulin = (insulinRate * 0.5));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 301 && pastSugar <= 325){
+            console.log(nowInsulin = (insulinRate * 0.4));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 326 && pastSugar <= 350){
+            console.log(nowInsulin = (insulinRate * 0.3));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 351 && pastSugar <= 450){
+            console.log(nowInsulin = (insulinRate * 0.2));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+
+    }
+    if(nowSugar >= 201 && nowSugar <= 225){
+        if(pastSugar <= 100){
+            console.log(nowInsulin = (insulinRate * 1.5));
+            paragraph.textContent = nowInsulin + " units/hr";
+        }
+        else if(pastSugar >= 101 && pastSugar <= 150){
+            console.log(nowInsulin = (insulinRate * 1.4));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 151 && pastSugar <= 200){
+            console.log(nowInsulin = (insulinRate * 1.3));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 201 && pastSugar <= 250){
+            console.log(nowInsulin = (insulinRate * 1.2));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 251 && pastSugar <= 275){
+            console.log(nowInsulin = (insulinRate * 1));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 276 && pastSugar <= 300){
+            console.log(nowInsulin = (insulinRate * 0.8));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 301 && pastSugar <= 325){
+            console.log(nowInsulin = (insulinRate * 0.5));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 326 && pastSugar <= 350){
+            console.log(nowInsulin = (insulinRate * 0.3));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 350 && pastSugar <= 450){
+            console.log(nowInsulin = (insulinRate * 0.2));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+
+    }
+    if(nowSugar >= 226 && nowSugar <= 250){
+        if(pastSugar <= 100){
+            console.log(nowInsulin = (insulinRate * 1.8));
+            paragraph.textContent = nowInsulin + " units/hr";
+        }
+        else if(pastSugar >= 101 && pastSugar <= 150){
+            console.log(nowInsulin = (insulinRate * 1.6));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 151 && pastSugar <= 225){
+            console.log(nowInsulin = (insulinRate * 1.4));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 226 && pastSugar <= 275){
+            console.log(nowInsulin = (insulinRate * 1.2));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 276 && pastSugar <= 300){
+            console.log(nowInsulin = (insulinRate * 1));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 301 && pastSugar <= 325){
+            console.log(nowInsulin = (insulinRate * 0.8));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 326 && pastSugar <= 350){
+            console.log(nowInsulin = (insulinRate * 0.5));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 351 && pastSugar <= 400){
+            console.log(nowInsulin = (insulinRate * 0.4));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 401 && pastSugar <= 450){
+            console.log(nowInsulin = (insulinRate * 0.2));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+
+    }
+    if(nowSugar >= 251 && nowSugar <= 275){
+        if(pastSugar <= 100){
+            console.log(nowInsulin = (insulinRate * 2));
+            paragraph.textContent = nowInsulin + " units/hr";
+        }
+        else if(pastSugar >= 101 && pastSugar <= 150){
+            console.log(nowInsulin = (insulinRate * 1.8));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 151 && pastSugar <= 200){
+            console.log(nowInsulin = (insulinRate * 1.6));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 201 && pastSugar <= 275){
+            console.log(nowInsulin = (insulinRate * 1.4));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 276 && pastSugar <= 300){
+            console.log(nowInsulin = (insulinRate * 1.2));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 301 && pastSugar <= 325){
+            console.log(nowInsulin = (insulinRate * 1));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 326 && pastSugar <= 350){
+            console.log(nowInsulin = (insulinRate * 0.8));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 351 && pastSugar <= 400){
+            console.log(nowInsulin = (insulinRate * 0.5));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 401 && pastSugar <= 450){
+            console.log(nowInsulin = (insulinRate * 0.4));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+
+    }
+    if(nowSugar >= 276 && nowSugar <= 300){
+        if(pastSugar <= 100){
+            console.log(nowInsulin = (insulinRate * 2.2));
+            paragraph.textContent = nowInsulin + " units/hr";
+        }
+        else if(pastSugar >= 101 && pastSugar <= 200){
+            console.log(nowInsulin = (insulinRate * 1.8));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 201 && pastSugar <= 250){
+            console.log(nowInsulin = (insulinRate * 1.6));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 251 && pastSugar <= 300){
+            console.log(nowInsulin = (insulinRate * 1.4));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 301 && pastSugar <= 325){
+            console.log(nowInsulin = (insulinRate * 1.2));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 326 && pastSugar <= 375){
+            console.log(nowInsulin = (insulinRate * 1));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 376 && pastSugar <= 400){
+            console.log(nowInsulin = (insulinRate * 0.5));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 401 && pastSugar <= 450){
+            console.log(nowInsulin = (insulinRate * 0.4));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+
+    }
+    if(nowSugar >= 301 && nowSugar <= 325){
+        if(pastSugar <= 100){
+            console.log(nowInsulin = (insulinRate * 2.4));
+            paragraph.textContent = nowInsulin + " units/hr";
+        }
+        else if(pastSugar >= 101 && pastSugar <= 175){
+            console.log(nowInsulin = (insulinRate * 2));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 176 && pastSugar <= 250){
+            console.log(nowInsulin = (insulinRate * 1.8));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 251 && pastSugar <= 300){
+            console.log(nowInsulin = (insulinRate * 1.6));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 301 && pastSugar <= 325){
+            console.log(nowInsulin = (insulinRate * 1.4));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 326 && pastSugar <= 350){
+            console.log(nowInsulin = (insulinRate * 1.2));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 351 && pastSugar <= 400){
+            console.log(nowInsulin = (insulinRate * 1));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 401 && pastSugar <= 450){
+            console.log(nowInsulin = (insulinRate * 0.5));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+
+    }
+    if(nowSugar >= 326 && nowSugar <= 350){
+        if(pastSugar <= 100){
+            console.log(nowInsulin = (insulinRate * 2.6));
+            paragraph.textContent = nowInsulin + " units/hr";
+        }
+        else if(pastSugar >= 101 && pastSugar <= 250){
+            console.log(nowInsulin = (insulinRate * 2));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 251 && pastSugar <= 275){
+            console.log(nowInsulin = (insulinRate * 1.8));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 276 && pastSugar <= 325){
+            console.log(nowInsulin = (insulinRate * 1.6));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 326 && pastSugar <= 350){
+            console.log(nowInsulin = (insulinRate * 1.4));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 351 && pastSugar <= 375){
+            console.log(nowInsulin = (insulinRate * 1.2));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 376 && pastSugar <= 450){
+            console.log(nowInsulin = (insulinRate * 1));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+
+    }
+    if(nowSugar >= 351 && nowSugar <= 375){
+        if(pastSugar <= 100){
+            console.log(nowInsulin = (insulinRate * 2.8));
+            paragraph.textContent = nowInsulin + " units/hr";
+        }
+        else if(pastSugar >= 101 && pastSugar <= 200){
+            console.log(nowInsulin = (insulinRate * 2.2));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 201 && pastSugar <= 275){
+            console.log(nowInsulin = (insulinRate * 2));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 276 && pastSugar <= 325){
+            console.log(nowInsulin = (insulinRate * 1.8));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 326 && pastSugar <= 350){
+            console.log(nowInsulin = (insulinRate * 1.6));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 351 && pastSugar <= 375){
+            console.log(nowInsulin = (insulinRate * 1.4));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 376 && pastSugar <= 450){
+            console.log(nowInsulin = (insulinRate * 1.2));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+
+    }
+    if(nowSugar >= 376 && nowSugar <= 400){
+        if(pastSugar <= 100){
+            console.log(nowInsulin = (insulinRate * 3));
+            paragraph.textContent = nowInsulin + " units/hr";
+        }
+        else if(pastSugar >= 101 && pastSugar <= 250){
+            console.log(nowInsulin = (insulinRate * 2.2));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 251 && pastSugar <= 325){
+            console.log(nowInsulin = (insulinRate * 2));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 326 && pastSugar <= 350){
+            console.log(nowInsulin = (insulinRate * 1.8));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 351 && pastSugar <= 375){
+            console.log(nowInsulin = (insulinRate * 1.6));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 376 && pastSugar <= 450){
+            console.log(nowInsulin = (insulinRate * 1.4));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        
+    }
+    if(nowSugar >= 401 && nowSugar <= 450){
+        if(pastSugar <= 100){
+            console.log(nowInsulin = (insulinRate * 3.2));
+            paragraph.textContent = nowInsulin + " units/hr";
+        }
+        else if(pastSugar >= 101 && pastSugar <= 200){
+            console.log(nowInsulin = (insulinRate * 2.4));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 201 && pastSugar <= 275){
+            console.log(nowInsulin = (insulinRate * 2.2));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 276 && pastSugar <= 350){
+            console.log(nowInsulin = (insulinRate * 2));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 351 && pastSugar <= 375){
+            console.log(nowInsulin = (insulinRate * 1.8));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 376 && pastSugar <= 450){
+            console.log(nowInsulin = (insulinRate * 1.6));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        
+    }
+    if(nowSugar > 450){
+        paragraph.textContent = "Notify MD";
+    }
+    if(nowSugar < 70){
+        paragraph.textContent = "Stop gtt and give 1/2 amp D50";
+    }
+    if(nowSugar >= 70 && nowSugar < 85){
+        paragraph.textContent = "Stop gtt and recheck in 30 min"
+    }
+});
+
+
+</script>
+
+        <script type="text/javascript" src="cordova.js"></script>
+    </body>
+</html>
