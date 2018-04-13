@@ -35,11 +35,12 @@
                font-weight: bold;
                border: solid 5px white;
                color: white;
+               transition: color 1s, background-color 1s;
                  }
            #Submit:hover {
            	color: Teal;
            	background-color: white;
-           	transition: color 1s;
+           	transition: color 1s, background-color 1s;
            	           }
             #pastSugar, #nowSugar, #nowInsulin{
                 height: 50px;
@@ -178,6 +179,58 @@ button.addEventListener("click", function now(){
         else if(pastSugar >= 276 && pastSugar <= 450){
             console.log(nowInsulin = (insulinRate * 0.1));
             paragraph.textContent = nowInsulin + " units/hr";
+        }
+
+    }
+    if(nowSugar >= 121 && nowSugar <= 140){
+        if(pastSugar <= 100){
+            console.log(nowInsulin = (insulinRate * 1.1));
+            paragraph.textContent = nowInsulin + " units/hr";
+        }
+        else if(pastSugar >= 101 && pastSugar <= 140){
+            console.log(nowInsulin = (insulinRate * 1));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 141 && pastSugar <= 160){
+            console.log(nowInsulin = (insulinRate * 0.9));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 161 && pastSugar <= 180){
+            console.log(nowInsulin = (insulinRate * 0.8));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 181 && pastSugar <= 200){
+            console.log(nowInsulin = (insulinRate * 0.7));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 201 && pastSugar <= 225){
+            console.log(nowInsulin = (insulinRate * 0.5));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 226 && pastSugar <= 275){
+            console.log(nowInsulin = (insulinRate * 0.4));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 276 && pastSugar <= 300){
+            console.log(nowInsulin = (insulinRate * 0.3));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 301 && pastSugar <= 325){
+            console.log(nowInsulin = (insulinRate * 0.2));
+            paragraph.textContent = nowInsulin + " units/hr";
+
+        }
+        else if(pastSugar >= 326 && pastSugar <= 450){
+            console.log(nowInsulin = (insulinRate * 0.1));
+            paragraph.textContent = nowInsulin + " units/hr";
+
         }
 
     }
